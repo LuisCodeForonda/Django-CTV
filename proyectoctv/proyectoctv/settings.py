@@ -118,8 +118,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Rutas de carga de los archivos estaticos importante
 STATICFILES_DIRS = [
-    BASE_DIR / "ctv/static",
+    BASE_DIR / "static",
 ]
 
 # Default primary key field type

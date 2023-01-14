@@ -1,8 +1,110 @@
 {% extends 'ctv/base.html' %}
 
+{% load static %}
 
-{% block contenido %}
 
-Contenido de programas
+{% block content %}
+
+<div class="tab">
+    <h2 class="text-2xl font-bold p-4">Programas</h2>
+
+    <ul class="flex flex-row flex-wrap gap-1 text-lg">
+      <li id="tab"
+        class="grow text-center cursor-pointer bg-gray-200 text-gray-900 p-2 font-medium hover:bg-red-700 hover:text-gray-200 bg-red-700 text-gray-200">
+        Religiosos
+      </li>
+      <li id="tab"
+        class="grow text-center cursor-pointer bg-gray-200 text-gray-900 p-2 font-medium hover:bg-red-700 hover:text-gray-200">
+        Noticieros</li>
+      <li id="tab"
+        class="grow text-center cursor-pointer bg-gray-200 text-gray-900 p-2 font-medium hover:bg-red-700 hover:text-gray-200">
+        Análisis</li>
+      <li id="tab"
+        class="grow text-center cursor-pointer bg-gray-200 text-gray-900 p-2 font-medium hover:bg-red-700 hover:text-gray-200">
+        Familiares</li>
+      <li id="tab"
+        class="grow text-center cursor-pointer bg-gray-200 text-gray-900 p-2 font-medium hover:bg-red-700 hover:text-gray-200">
+        Entretenimiento
+      </li>
+    </ul>
+
+    <div class="tab-container text-lg">
+      <div id="tab-content" class="block">
+
+        <div class="p-4 my-4 border-2">
+          <h1 class="text-3xl">SANTO ROSARIO</h1>
+          <p class="py-2">
+            El Santo Rosario, rezo tradicional católico, que conmemora los veinte “misterios” de
+            la vida de Jesucristo y de la Virgen María, recitando después de cada uno un Padre
+            nuestro, diez Ave María y un gloria.
+          </p>
+          <br>
+          Los Misterios del Rosario son 4:
+          <p class="py-2">
+            <strong>Misterios Gozosos</strong>
+            (lunes y sábado) relatan la anunciación del ángel a la Virgen María y la encarnación
+            del Hijo de Dios, la visitación de la Virgen María a su prima Santa Isabel, el
+            nacimiento del Hijo de Dios, la presentación de Jesús en el Templo y el Niño Jesús
+            es hallado en el Templo.
+          </p>
+          <p class="py-2">
+            <strong>Misterios Luminosos</strong>
+            (Jueves) relatan el bautismo de Jesús en el río Jordán, la auto revelación de Jesús
+            en las bodas de Caná, el anuncio del Reino de Dios invitando a la conversión, la
+            Transfiguración de Jesús y la institución de la Eucaristía.
+          </p>
+          <p class="py-2">
+            <strong>Misterios Dolorosos</strong>
+            (Martes y viernes) relatan la oración de Jesús en el Huerto de los olivos, la
+            flagelación del Señor, la coronación de espinas, Jesús con la cruz a cuestas camino
+            al calvario y la Crucifixión y Muerte de Jesús.
+          </p>
+          <p class="py-2">
+            <strong>Misterios Gloriosos</strong>
+            ((Miércoles y domingos) relatan la resurrección del Señor, la ascensión del Señor,
+            la venida del Espíritu Santo sobre la Virgen María y los apóstoles, la Asunción de
+            Nuestra Señora a los cielos y la coronación de la Santísima Virgen como reina de
+            todo lo creado.
+          </p>
+
+          <p class="font-bold">Emisión Diaria</p>
+          <p class=""><strong class="pr-2">Lunes a Viernes</strong>6:00</p>
+          <p class=""><strong class="pr-2">Sábado</strong>6:30</p>
+          <p class=""><strong class="pr-2">Domingo</strong>6:00</p>
+
+
+        </div>
+
+        <div class="p-4 my-4 border-2">
+          <h1 class="text-3xl">SANTO ROSARIO</h1>
+          <p class="py-2">
+            El Santo Rosario, rezo tradicional católico, que conmemora los veinte “misterios” de
+            la vida de Jesucristo y de la Virgen María, recitando después de cada uno un Padre
+            nuestro, diez Ave María y un gloria.
+          </p>
+          <p class="font-bold">Emisión</p>
+          <div class="">
+            <p class=""><strong class="pr-2">Lunes a Viernes</strong>6:00</p>
+            <p class=""><strong class="pr-2">Sábado</strong>6:30</p>
+            <p class=""><strong class="pr-2">Domingo</strong>6:00</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="tab-content" class="block p-6 hidden">
+        b
+      </div>
+      <div id="tab-content" class="block p-6 hidden">
+        c
+      </div>
+      <div id="tab-content" class="block p-6 hidden">
+        d
+      </div>
+      <div id="tab-content" class="block p-6 hidden">
+        e
+      </div>
+    </div>
+
 
 {% endblock %}

@@ -1,8 +1,53 @@
 {% extends 'ctv/base.html' %}
 
+{% load static %}
 
-{% block contenido %}
+{% block content %}
 
-Contenido Principal
+<div class="relative">
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96">
+        <img src="{% static 'ctv/assets/Programa1.png' %}" alt="" class="w-full h-full">
+    </picture>
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96 hidden ">
+        <img src="{% static 'ctv/assets/Programa2.png' %}" alt="" class="w-full h-full">
+    </picture>
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96 hidden">
+        <img src="{% static 'ctv/assets/Programa3.png' %}" alt="" class="w-full h-full">
+    </picture>
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96 hidden">
+        <img src="{% static 'ctv/assets/Programa4.png' %}" alt="" class="w-full h-full">
+    </picture>
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96 hidden">
+        <img src="{% static 'ctv/assets/Programa5.png' %}" alt="" class="w-full h-full">
+    </picture>
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96 hidden">
+        <img src="{% static 'ctv/assets/Programa6.PNG' %}" alt="" class="w-full h-full">
+    </picture>
+    <picture id="mySlides" class="block w-full h-64 sm:h-80 md:h-96 hidden">
+        <img src="{% static 'ctv/assets/Programa7.png' %}" alt="" class="w-full h-full">
+    </picture>
 
-{% endblock %}
+    <span id="prev" class="absolute top-2/4 bg-gray-200/75 rounded-full px-1 pt-1 cursor-pointer"><i
+            class="fa-solid fa-arrow-left w-6 h-6"></i></span>
+    <span id="next" class="absolute right-0 top-2/4 bg-gray-200/75 rounded-full px-1 pt-1 cursor-pointer"><i
+            class="fa-solid fa-arrow-right w-6 h-6"></i></span>
+</div>
+
+<div class="relative flex flex-row justify-center p-4 gap-2">
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 bg-gray-800 cursor-pointer" onclick="currentSlide(1)"
+        data-id="1"></div>
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(2)" data-id="2">
+    </div>
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(3)" data-id="3">
+    </div>
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(4)" data-id="4">
+    </div>
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(5)" data-id="5">
+    </div>
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(6)" data-id="6">
+    </div>
+    <div id="dot" class="w-5 h-5 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(7)" data-id="7">
+    </div>
+</div>
+
+{% endblock content %}
