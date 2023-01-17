@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" href="assets/LogoDorado.png">
-  <!--<script src="https://cdn.tailwindcss.com"></script>-->
+  <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
   <script src="{% static 'ctv/js/all.min.js' %}"></script>
 
   <link rel="stylesheet" href="{% static 'ctv/css/tailwind.css' %}">
@@ -48,11 +48,11 @@
       </ul>
 
       <ul id="menu"
-        class="block w-full h-56 flex flex-col justify-evenly gap-4 hidden md:w-auto md:h-auto md:block md:order-1 md:flex md:flex-row">
-        <li id="menu-item" class="text-center text-xl hover:border-b-2 {% if navbar == '1' %} border-b-2 {% endif %}"><a href="{% url 'quienessomos' %}">Quienes somos</a></li>
-        <li id="menu-item" class="text-center text-xl hover:border-b-2 {% if navbar == '2' %} border-b-2 {% endif %}"><a href="{% url 'programacion' %}">Programación</a></li>
-        <li id="menu-item" class="text-center text-xl hover:border-b-2 {% if navbar == '3' %} border-b-2 {% endif %}"><a href="{% url 'programas' %}">Programas</a></li>
-        <li id="menu-item" class="text-center text-xl hover:border-b-2 {% if navbar == '4' %} border-b-2 {% endif %}"><a href="{% url 'contactos' %}">Contactos</a></li>
+        class="block w-full h-56 flex flex-col justify-evenly gap-1 md:gap-4 hidden md:w-auto md:h-auto md:block md:order-1 md:flex md:flex-row">
+        <li id="menu-item" class="text-center text-xl"><a href="{% url 'quienessomos' %}" class="p-2 md:p-0 border-b-2 border-transparent hover:border-white {% if navbar == '1' %} border-white {% endif %}">Quienes somos</a></li>
+        <li id="menu-item" class="text-center text-xl"><a href="{% url 'programacion' %}" class="p-2 md:p-0 border-b-2 border-transparent hover:border-white {% if navbar == '2' %} border-white {% endif %}">Programación</a></li>
+        <li id="menu-item" class="text-center text-xl"><a href="{% url 'programas' %}"  class="p-2 md:p-0 border-b-2 border-transparent hover:border-white {% if navbar == '3' %} border-white {% endif %}">Programas</a></li>
+        <li id="menu-item" class="text-center text-xl"><a href="{% url 'contactos' %}"  class="p-2 md:p-0 border-b-2 border-transparent hover:border-white {% if navbar == '4' %} border-white {% endif %}">Contactos</a></li>
       </ul>
 
     </div>
