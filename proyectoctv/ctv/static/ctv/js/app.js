@@ -11,6 +11,10 @@ const slidenext = document.querySelector('#next');
 const tabs = document.querySelectorAll("#tab");
 const contents = document.querySelectorAll("#tab-content");
 
+//variables del padre de programas
+const contenedorProgramas = document.querySelector(".tab").parentElement;
+
+
 
 //codigo del menu
 boton.addEventListener('click', () => {
@@ -106,6 +110,9 @@ if(!(tabs === null)){
     });
 }
 
+
+//codigo de los programs
+contenedorProgramas.classList.remove("");
 /*
 3 adaptadores display port a hdmi hembra
 3 adaptadores vga hembra a hdmi macho*/
