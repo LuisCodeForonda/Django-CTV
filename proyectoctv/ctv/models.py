@@ -18,7 +18,11 @@ class Programacion(models.Model):
         diccionario = {"1":"Lunes a Viernes", "2": "Sabados", "3":"Domingos"}
         return "{} - {} - {}".format(self.hora_emision, self.nombre, diccionario[self.dias])
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=30)
 
+    def __str__(self) :
+        return self.nombre
 
 class Programa(models.Model):
     LISTA_CATEGORIAS = [
@@ -29,11 +33,12 @@ class Programa(models.Model):
         ('5', 'Entretenimiento'),
     ]
 
+    categoria = models.ForeignKey(Categoria, null=True, blank=True, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=50)
     imagen = models.ImageField(upload_to="programasimg", null=True)
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
-    categoria = models.CharField(max_length=1, choices=LISTA_CATEGORIAS, default='Religiosos')
+    
     descripcion = models.TextField(max_length=200, blank=True)
 
     link_facebook = models.CharField(max_length=100, blank=True)
@@ -44,5 +49,5 @@ class Programa(models.Model):
 
     def __str__(self):
         diccionario_categorias = {"1":"Religiosos", "2": "Noticieros", "3":"Analisis", "4":"Familiares", "5":"Entretenimiento"}
-        return "{} - {} - {}".format(self.nombre, diccionario_categorias[self.categoria], self.hora_inicio, self.hora_fin)
+        return "{} - {} - {}".format(self.nombre, self.hora_inicio, self.hora_fin)
     

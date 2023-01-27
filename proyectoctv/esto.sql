@@ -1,3 +1,4 @@
+INSERT INTO `ctv_programacion` (`id`,`hora_emision`,`nombre`,`dias`) VALUES (1,'05:55:00.000000','HORA SANTA','1');
 INSERT INTO `ctv_programacion` (`id`,`hora_emision`,`nombre`,`dias`) VALUES (2,'06:30:00.000000','SANTA MISA','1');
 INSERT INTO `ctv_programacion` (`id`,`hora_emision`,`nombre`,`dias`) VALUES (3,'07:00:00.000000','REVISTA BUENOS DÍAS','1');
 INSERT INTO `ctv_programacion` (`id`,`hora_emision`,`nombre`,`dias`) VALUES (6,'09:00:00.000000','EL SAZÓN DE LA MAÑANA','1');

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Programacion, Programa
+from .models import Programacion, Programa, Categoria
 # Register your models here.
 
 #admin.site.register(Programacion)
@@ -22,3 +22,5 @@ class ProgramaAdmin(admin.ModelAdmin):
     search_fields = ('nombre',)
 
     list_display_links = ('nombre', 'categoria')
+
+admin.site.register(Categoria)
