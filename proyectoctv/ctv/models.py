@@ -33,7 +33,7 @@ class Programa(models.Model):
         ('5', 'Entretenimiento'),
     ]
 
-    categoria = models.ForeignKey(Categoria, null=True, blank=True, on_delete=models.CASCADE)
+    categoria = models.CharField(max_length=1, choices=LISTA_CATEGORIAS, null=True, default='Religiosos')
     nombre = models.CharField(max_length=50)
     imagen = models.ImageField(upload_to="programasimg", null=True)
     hora_inicio = models.TimeField()

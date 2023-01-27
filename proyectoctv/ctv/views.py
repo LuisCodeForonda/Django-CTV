@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import Programacion, Programa, Categoria
+from .models import Programacion, Programa
 
 # Create your views here.
 
@@ -17,19 +17,13 @@ def programacion(request):
     return render(request, "ctv/programacion.html", {'navbar':'2', 'lunes_viernes': lunes_viernes, 'sabados': sabados, 'domingos':domingos})
 
 def programas(request):
-    lista_categorias = Categoria.objects.all()
-    lista_programas = []
+    religiosos = Programa.objects.filter(categoria="1")
+    noticieros = Programa.objects.filter(categoria="2")
+    analisis = Programa.objects.filter(categoria="3")
+    familiares = Programa.objects.filter(categoria="4")
+    entretenimiento = Programa.objects.filter(categoria="5")
 
-    #obteniendo la lista de programas ordenados por categoria
-    for i in lista_categorias:
-        print(i)
-        lista_programas.append(Programa.objects.filter(categoria=i).order_by("nombre"))
-
-    #creando el diccionario de programas
-    diccionario_programas = { key:value for (key, value) in zip(lista_categorias, lista_programas) }
-    
-    print(diccionario_programas)
-    return render(request, "ctv/programas.html", {'navbar':'3', 'lista_categorias':lista_categorias, 'diccionario_programas':diccionario_programas})
+    return render(request, "ctv/programas.html", {'navbar':'3', 'religiosos':religiosos, 'noticieros':noticieros, 'analisis':analisis, 'familiares':familiares, 'entretenimiento':entretenimiento})
 
 def contactos(request):
     return render(request, "ctv/contactos.html", {'navbar':'4'})

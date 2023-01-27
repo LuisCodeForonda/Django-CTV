@@ -30,8 +30,34 @@
   </ul>
 
   <div class="tab-container text-lg ">
-    <div id="tab-content" class="block flex flex-col gap-2">
+    <div id="tab-content" class="block p-6">
 
+      <div class="grid gap-4 grid grid-cols-1 md:grid-cols-2">
+
+        {% for indice in religiosos %}
+
+          <div class="rounded-xl overflow-hidden w-80 max-w-md mx-auto">
+            <img src="{{ indice.imagen.url }}" alt="" class="w-full h-48 object-fill">
+            <div class="shadow-xl justify-between p-4 text-center rounded-b-xl border-b-2 border-x-2 border-gray-400 text-gray-900">
+              <h3 class="text-2xl font-bold">{{ indice.nombre }}</h3>
+              <p class="text-lg font-semibold py-2">{{ indice.hora_inicio }} - {{ indice.hora_fin }}</p>
+              <p class="leading-7">
+                {{ indice.descripcion }}
+              </p>
+              <div class="flex flex-row justify-center gap-8 text-2xl mt-2">
+                <a href="{{ indice.link_facebook }}" class="hover:text-red-700 {% if indice.link_facebook == '' %} hidden {% endif %}"><i class="fa-brands fa-facebook"></i></a>
+                <a href="{{ indice.link_twitter }}" class="hover:text-red-700 {% if indice.link_twitter == '' %} hidden {% endif %}"><i class="fa-brands fa-twitter"></i></a>
+                <a href="{{ indice.link_instagram }}" class="hover:text-red-700 {% if indice.link_instagram == '' %} hidden {% endif %}"><i class="fa-brands fa-instagram"></i></a>
+                <a href="{{ indice.link_tiktok }}" class="hover:text-red-700 {% if indice.link_tiktok == '' %} hidden {% endif %}"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ indice.link_youtube }}" class="hover:text-red-700 {% if indice.link_youtube == '' %} hidden {% endif %}"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+
+      </div>
+      <!--
       <div class="p-4 border-2">
         <h1 class="text-3xl">SANTO ROSARIO</h1>
         <p class="py-2">
@@ -90,6 +116,8 @@
           <p class=""><strong class="pr-2">Domingo</strong>6:00</p>
         </div>
       </div>
+      -->
+
     </div>
 
     <div id="tab-content" class="block p-6 hidden">
@@ -98,7 +126,7 @@
 
         {% for indice in noticieros %}
 
-          <div class="rounded-xl overflow-hidden max-w-md mx-auto">
+          <div class="rounded-xl overflow-hidden w-80 max-w-md mx-auto">
             <img src="{{ indice.imagen.url }}" alt="" class="w-full h-48 object-fill">
             <div class="shadow-xl justify-between p-4 text-center rounded-b-xl border-b-2 border-x-2 border-gray-400 text-gray-900">
               <h3 class="text-2xl font-bold">{{ indice.nombre }}</h3>
@@ -118,6 +146,7 @@
 
         {% endfor %}
 
+        <!--
         <div class="shadow-xl rounded-xl overflow-hidden max-w-md mx-auto ">
           <img src="assets/Programa1.png" alt="" class="w-full h-48">
           <div class="p-4 text-center rounded-b-xl border-b-2 border-x-2 border-gray-400 text-gray-900">
@@ -136,7 +165,7 @@
             </div>
           </div>
         </div>
-
+      -->
        
 
 
@@ -144,13 +173,86 @@
 
     </div>
     <div id="tab-content" class="block p-6 hidden">
-      c
+      <div class="grid gap-4 grid grid-cols-1 md:grid-cols-2">
+
+        {% for indice in analisis %}
+
+          <div class="rounded-xl overflow-hidden w-80 max-w-md mx-auto">
+            <img src="{{ indice.imagen.url }}" alt="" class="w-full h-48 object-fill">
+            <div class="shadow-xl justify-between p-4 text-center rounded-b-xl border-b-2 border-x-2 border-gray-400 text-gray-900">
+              <h3 class="text-2xl font-bold">{{ indice.nombre }}</h3>
+              <p class="text-lg font-semibold py-2">{{ indice.hora_inicio }} - {{ indice.hora_fin }}</p>
+              <p class="leading-7">
+                {{ indice.descripcion }}
+              </p>
+              <div class="flex flex-row justify-center gap-8 text-2xl mt-2">
+                <a href="{{ indice.link_facebook }}" class="hover:text-red-700 {% if indice.link_facebook == '' %} hidden {% endif %}"><i class="fa-brands fa-facebook"></i></a>
+                <a href="{{ indice.link_twitter }}" class="hover:text-red-700 {% if indice.link_twitter == '' %} hidden {% endif %}"><i class="fa-brands fa-twitter"></i></a>
+                <a href="{{ indice.link_instagram }}" class="hover:text-red-700 {% if indice.link_instagram == '' %} hidden {% endif %}"><i class="fa-brands fa-instagram"></i></a>
+                <a href="{{ indice.link_tiktok }}" class="hover:text-red-700 {% if indice.link_tiktok == '' %} hidden {% endif %}"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ indice.link_youtube }}" class="hover:text-red-700 {% if indice.link_youtube == '' %} hidden {% endif %}"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
     </div>
     <div id="tab-content" class="block p-6 hidden">
-      d
+      
+      <div class="grid gap-4 grid grid-cols-1 md:grid-cols-2">
+
+        {% for indice in familiares %}
+
+          <div class="rounded-xl overflow-hidden w-80 max-w-md mx-auto">
+            <img src="{{ indice.imagen.url }}" alt="" class="w-full h-48 object-fill">
+            <div class="shadow-xl justify-between p-4 text-center rounded-b-xl border-b-2 border-x-2 border-gray-400 text-gray-900">
+              <h3 class="text-2xl font-bold">{{ indice.nombre }}</h3>
+              <p class="text-lg font-semibold py-2">{{ indice.hora_inicio }} - {{ indice.hora_fin }}</p>
+              <p class="leading-7">
+                {{ indice.descripcion }}
+              </p>
+              <div class="flex flex-row justify-center gap-8 text-2xl mt-2">
+                <a href="{{ indice.link_facebook }}" class="hover:text-red-700 {% if indice.link_facebook == '' %} hidden {% endif %}"><i class="fa-brands fa-facebook"></i></a>
+                <a href="{{ indice.link_twitter }}" class="hover:text-red-700 {% if indice.link_twitter == '' %} hidden {% endif %}"><i class="fa-brands fa-twitter"></i></a>
+                <a href="{{ indice.link_instagram }}" class="hover:text-red-700 {% if indice.link_instagram == '' %} hidden {% endif %}"><i class="fa-brands fa-instagram"></i></a>
+                <a href="{{ indice.link_tiktok }}" class="hover:text-red-700 {% if indice.link_tiktok == '' %} hidden {% endif %}"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ indice.link_youtube }}" class="hover:text-red-700 {% if indice.link_youtube == '' %} hidden {% endif %}"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
+
     </div>
     <div id="tab-content" class="block p-6 hidden">
-      e
+      
+      <div class="grid gap-4 grid grid-cols-1 md:grid-cols-2">
+
+        {% for indice in entretenimiento %}
+
+          <div class="rounded-xl overflow-hidden w-80 max-w-md mx-auto">
+            <img src="{{ indice.imagen.url }}" alt="" class="w-full h-48 object-fill">
+            <div class="shadow-xl justify-between p-4 text-center rounded-b-xl border-b-2 border-x-2 border-gray-400 text-gray-900">
+              <h3 class="text-2xl font-bold">{{ indice.nombre }}</h3>
+              <p class="text-lg font-semibold py-2">{{ indice.hora_inicio }} - {{ indice.hora_fin }}</p>
+              <p class="leading-7">
+                {{ indice.descripcion }}
+              </p>
+              <div class="flex flex-row justify-center gap-8 text-2xl mt-2">
+                <a href="{{ indice.link_facebook }}" class="hover:text-red-700 {% if indice.link_facebook == '' %} hidden {% endif %}"><i class="fa-brands fa-facebook"></i></a>
+                <a href="{{ indice.link_twitter }}" class="hover:text-red-700 {% if indice.link_twitter == '' %} hidden {% endif %}"><i class="fa-brands fa-twitter"></i></a>
+                <a href="{{ indice.link_instagram }}" class="hover:text-red-700 {% if indice.link_instagram == '' %} hidden {% endif %}"><i class="fa-brands fa-instagram"></i></a>
+                <a href="{{ indice.link_tiktok }}" class="hover:text-red-700 {% if indice.link_tiktok == '' %} hidden {% endif %}"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ indice.link_youtube }}" class="hover:text-red-700 {% if indice.link_youtube == '' %} hidden {% endif %}"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
+
     </div>
   </div>
 
