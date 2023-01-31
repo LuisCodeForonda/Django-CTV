@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Programacion, Programa, Categoria
+from .models import Programacion, Programa, Noticia
 # Register your models here.
 
 #admin.site.register(Programacion)
@@ -23,4 +23,5 @@ class ProgramaAdmin(admin.ModelAdmin):
 
     list_display_links = ('nombre', 'categoria')
 
-admin.site.register(Categoria)
+admin.site.register(Noticia)
+

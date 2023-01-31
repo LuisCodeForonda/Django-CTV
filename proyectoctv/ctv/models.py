@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -50,4 +51,25 @@ class Programa(models.Model):
     def __str__(self):
         diccionario_categorias = {"1":"Religiosos", "2": "Noticieros", "3":"Analisis", "4":"Familiares", "5":"Entretenimiento"}
         return "{} - {} - {}".format(self.nombre, self.hora_inicio, self.hora_fin)
-    
+
+class Noticia(models.Model):
+    NOTICIA_CATEGORIA = [
+        ('1', 'Sociedad'),
+        ('2', 'Desastres y accidentes'),
+        ('3', 'Seguridad'),
+        ('4', 'Deportes'),
+        ('5', 'Politica'),
+        ('6', 'Entretenimiento'),
+    ]
+
+    titulo = models.CharField(max_length=200)
+    imagen = models.ImageField(upload_to="noticiasimg", null=True)
+    idtitulo = models.CharField(max_length=200, unique=True, help_text="(Ojo) si el titulo es: Mi titulo, la noticia de hoy. Ingrese el titulo en sin espacios ejemplo: mi-titulo-noticia-de-hoy")
+    cuerpo = models.TextField()
+    subcategoria = models.CharField(max_length=1, choices=NOTICIA_CATEGORIA, default='Sociedad')
+    fecha = models.DateTimeField(default=timezone.datetime.now(), help_text="campos automaticos  ; )")
+
+    def __str__(self):
+        return "{} - {} - {}".format(self.titulo, self.subcategoria, self.fecha)
+
+
