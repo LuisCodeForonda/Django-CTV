@@ -1,0 +1,27 @@
+{% extends 'ctv/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="text-gray-900">
+
+    <h1 class="text-3xl font-bold mb-2">{{ noticia.titulo }}</h1>
+    <p class="font-semibold mb-2">Publicado el: {{ noticia.fecha|date:'j M Y' }}</p>
+    <img src="{{ noticia.imagen.url }}" alt="" class="w-full h-72">
+    <p class="leading-7 mt-4 text-lg">{{ noticia.cuerpo }}</p>
+
+    <hr>
+    <h2 class="font-bold text-2xl">Últimas noticias</h2>
+    <ul>
+        {% for index in titulares %}
+        <li class="text-2xl font-semibold p-2 my-2 border-l-2 border-red-700 hover:text-red-700">
+            <a href="" class="">{{ index.titulo }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock content %}

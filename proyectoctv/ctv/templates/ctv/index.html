@@ -50,4 +50,82 @@
     </div>
 </div>
 
+<h1 class="text-3xl font-bold mb-6">Noticias</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-900">
+   
+    {% for index in sociedad %}
+    <div class="bg-blue-100 w-full mx-auto">
+        <img src="{{ index.imagen.url }}" alt="" class="rounded-xl w-full h-56">
+        <div class="flex flex-row">
+            <p><span class="text-red-600 font-bold">Sociedad</span> | {{ index.fecha|date:'j M Y' }}</p>
+        </div>
+        <a href="{% url 'noticia' index.id %}" class="font-bold text-2xl">
+            {{ index.titulo }}
+        </a>
+    </div>
+    {% endfor %}
+
+    {% for index in accidentes %}
+    <div class="bg-blue-100 w-full mx-auto">
+        <img src="{{ index.imagen.url }}" alt="" class="rounded-xl w-full h-56">
+        <div class="flex flex-row">
+            <p><span class="text-red-600 font-bold">Desastres y accidentes</span> | {{ index.fecha }}</p>
+        </div>
+        <a href="" class="font-bold text-2xl">
+            {{ index.titulo }}
+        </a>
+    </div>
+    {% endfor %}
+
+    {% for index in seguridad %}
+    <div class="bg-blue-100 w-full mx-auto">
+        <img src="{{ index.imagen.url }}" alt="" class="rounded-xl w-full h-56">
+        <div class="flex flex-row">
+            <p><span class="text-red-600 font-bold">Seguridad</span> | {{ index.fecha }}</p>
+        </div>
+        <a href="" class="font-bold text-2xl">
+            {{ index.titulo }}
+        </a>
+    </div>
+    {% endfor %}
+
+    {% for index in deportes %}
+    <div class="bg-blue-100 w-full mx-auto">
+        <img src="{{ index.imagen.url }}" alt="" class="rounded-xl w-full h-56">
+        <div class="flex flex-row">
+            <p><span class="text-red-600 font-bold">Deportes</span> | {{ index.fecha }}</p>
+        </div>
+        <a href="" class="font-bold text-2xl">
+            {{ index.titulo }}
+        </a>
+    </div>
+    {% endfor %}
+
+    {% for index in politica %}
+    <div class="bg-blue-100 w-full mx-auto">
+        <img src="{{ index.imagen.url }}" alt="" class="rounded-xl w-full h-56">
+        <div class="flex flex-row">
+            <p><span class="text-red-600 font-bold">Politica</span> | {{ index.fecha }}</p>
+        </div>
+        <a href="" class="font-bold text-2xl">
+            {{ index.titulo }}
+        </a>
+    </div>
+    {% endfor %}
+
+    {% for index in entretenimiento %}
+    <div class="bg-blue-100 w-full mx-auto">
+        <img src="{{ index.imagen.url }}" alt="" class="rounded-xl w-full h-56">
+        <div class="flex flex-row">
+            <p><span class="text-red-600 font-bold">Entretenimiento</span> | {{ index.fecha }}</p>
+        </div>
+        <a href="" class="font-bold text-2xl">
+            {{ index.titulo }}
+        </a>
+    </div>
+    {% endfor %}
+    
+</div>
+
+
 {% endblock content %}

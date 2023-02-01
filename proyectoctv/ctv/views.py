@@ -1,10 +1,19 @@
 from django.shortcuts import render, HttpResponse
-from .models import Programacion, Programa
+from .models import Programacion, Programa, Noticia
+from django.shortcuts import get_object_or_404
+from ckeditor.fields import RichTextField
 
 # Create your views here.
 
 def index(request):
-    return render(request, "ctv/index.html", {})
+    sociedad = Noticia.objects.filter(subcategoria=1).order_by('-fecha')[:3]
+    accidentes = Noticia.objects.filter(subcategoria=2)
+    seguridad = Noticia.objects.filter(subcategoria=3)
+    deportes = Noticia.objects.filter(subcategoria=4)
+    politica = Noticia.objects.filter(subcategoria=5)
+    entretenimiento = Noticia.objects.filter(subcategoria=6)
+
+    return render(request, "ctv/index.html", {'sociedad':sociedad, 'accidentes':accidentes, 'seguridad':seguridad, 'deportes':deportes, 'politica':politica, 'entretenimiento':entretenimiento})
 
 def quienes_somos(request):
     return render(request, "ctv/quienessomos.html", {'navbar':'1'})
@@ -25,6 +34,13 @@ def programas(request):
 
     return render(request, "ctv/programas.html", {'navbar':'3', 'religiosos':religiosos, 'noticieros':noticieros, 'analisis':analisis, 'familiares':familiares, 'entretenimiento':entretenimiento})
 
+
 def contactos(request):
     return render(request, "ctv/contactos.html", {'navbar':'4'})
+
+
+def detallenoticia(request,  id):
+    noticia = get_object_or_404(Noticia, pk=id)
+    titulares = Noticia.objects.order_by('-fecha')[:6]
+    return render(request, "ctv/detallenoticia.html", {'noticia':noticia, 'titulares':titulares})
 

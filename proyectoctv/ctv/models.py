@@ -64,10 +64,10 @@ class Noticia(models.Model):
 
     titulo = models.CharField(max_length=200)
     imagen = models.ImageField(upload_to="noticiasimg", null=True)
-    idtitulo = models.CharField(max_length=200, unique=True, help_text="(Ojo) si el titulo es: Mi titulo, la noticia de hoy. Ingrese el titulo en sin espacios ejemplo: mi-titulo-noticia-de-hoy")
+    idtitulo = models.CharField(max_length=200, unique=True, help_text="(Ojo) Colocar el mismo titulo pero sin espacios en blanco utilize guion (-) en vez de espacios en blanco")
     cuerpo = models.TextField()
     subcategoria = models.CharField(max_length=1, choices=NOTICIA_CATEGORIA, default='Sociedad')
-    fecha = models.DateTimeField(default=timezone.datetime.now(), help_text="campos automaticos  ; )")
+    fecha = models.DateTimeField()
 
     def __str__(self):
         return "{} - {} - {}".format(self.titulo, self.subcategoria, self.fecha)
