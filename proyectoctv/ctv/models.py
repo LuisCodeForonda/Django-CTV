@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
-
+from django.db.models.signals import pre_save
+from proyectoctv.utils import unique_slug_generator
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Programacion(models.Model):
@@ -64,12 +66,18 @@ class Noticia(models.Model):
 
     titulo = models.CharField(max_length=200)
     imagen = models.ImageField(upload_to="noticiasimg", null=True)
-    idtitulo = models.CharField(max_length=200, unique=True, help_text="(Ojo) Colocar el mismo titulo pero sin espacios en blanco utilize guion (-) en vez de espacios en blanco")
-    cuerpo = models.TextField()
+    cuerpo = RichTextField()
     subcategoria = models.CharField(max_length=1, choices=NOTICIA_CATEGORIA, default='Sociedad')
     fecha = models.DateTimeField()
+    slug = models.SlugField(max_length=200, null=True, blank=True)
 
     def __str__(self):
-        return "{} - {} - {}".format(self.titulo, self.subcategoria, self.fecha)
+        return self.titulo
 
 
+def slug_generador(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+
+#antes de guardar genera el link dinamico este metodo presave genera el slug
+pre_save.connect(slug_generador, sender=Noticia)

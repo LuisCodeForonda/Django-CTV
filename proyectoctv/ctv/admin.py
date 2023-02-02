@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Programacion, Programa, Noticia
+from django.db import models
 # Register your models here.
 
 #admin.site.register(Programacion)
@@ -23,5 +24,13 @@ class ProgramaAdmin(admin.ModelAdmin):
 
     list_display_links = ('nombre', 'categoria')
 
-admin.site.register(Noticia)
+
+#admin.site.register(Noticia)
+@admin.register(Noticia)
+class NoticiaAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'subcategoria', 'fecha')
+
+    search_fields = ('titulo',)
+
+    list_display_links = ('titulo', 'subcategoria')
 

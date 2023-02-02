@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
+    'ckeditor',#ultimo
 ]
 
 MIDDLEWARE = [
@@ -130,8 +130,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 MEDIA_URL = '/media/'
-#lugar para guardar el texto del editor
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 
 # Rutas de carga de los archivos estaticos importante
@@ -143,3 +144,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#agregado las configuraciones para el editor de texto

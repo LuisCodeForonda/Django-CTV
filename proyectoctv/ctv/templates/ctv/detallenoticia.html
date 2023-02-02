@@ -11,10 +11,10 @@
     <h1 class="text-3xl font-bold mb-2">{{ noticia.titulo }}</h1>
     <p class="font-semibold mb-2">Publicado el: {{ noticia.fecha|date:'j M Y' }}</p>
     <img src="{{ noticia.imagen.url }}" alt="" class="w-full h-72">
-    <p class="leading-7 mt-4 text-lg">{{ noticia.cuerpo }}</p>
+    <p class="leading-7 my-4 text-lg">{{ noticia.cuerpo|safe }}</p>
 
     <hr>
-    <h2 class="font-bold text-2xl">Últimas noticias</h2>
+    <h2 class="font-bold text-2xl p-2">Últimas noticias</h2>
     <ul>
         {% for index in titulares %}
         <li class="text-2xl font-semibold p-2 my-2 border-l-2 border-red-700 hover:text-red-700">
@@ -25,3 +25,4 @@
 
 </div>
 {% endblock content %}
+10 unidades bnc dobles para control central

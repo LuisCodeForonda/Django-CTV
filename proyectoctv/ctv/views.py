@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from .models import Programacion, Programa, Noticia
 from django.shortcuts import get_object_or_404
-from ckeditor.fields import RichTextField
+
 
 # Create your views here.
 
@@ -39,8 +39,8 @@ def contactos(request):
     return render(request, "ctv/contactos.html", {'navbar':'4'})
 
 
-def detallenoticia(request,  id):
-    noticia = get_object_or_404(Noticia, pk=id)
+def detallenoticia(request,  slug_text):
+    noticia = get_object_or_404(Noticia, slug=slug_text)
     titulares = Noticia.objects.order_by('-fecha')[:6]
     return render(request, "ctv/detallenoticia.html", {'noticia':noticia, 'titulares':titulares})
 
